@@ -1,27 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-function EnvelopePlaceholder() {
-  return (
-    <div className="final-contact-background" aria-hidden="true">
-      {/* Large red envelope (simplified) */}
-      <div className="envelope-envelope">
-        <div className="envelope-flap" />
-        <div className="envelope-body" />
-      </div>
-
-      {/* Work-sample placeholders */}
-      <div className="envelope-work-samples">
-        <div className="sample sample-1" />
-        <div className="sample sample-2" />
-        <div className="sample sample-3" />
-        <div className="sample sample-4" />
-      </div>
-
-      {/* Cream paper card that emerges from envelope */}
-      <div className="envelope-cream-card" />
-    </div>
-  );
-}
-
 export default function FinalContactSection() {
   return (
     <section
@@ -29,7 +6,31 @@ export default function FinalContactSection() {
       className="final-contact-section"
       aria-labelledby="final-contact-heading"
     >
-      <EnvelopePlaceholder />
+      {/* Desktop background */}
+      <div
+        className="final-contact-background-image absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section8bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Mobile background */}
+      <div
+        className="final-contact-background-image-mobile absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section8bg-mobile.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
 
       {/* Central content (mobile uses normal flow inside this wrapper) */}
       <div className="final-contact-content">

@@ -4,41 +4,6 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 const EASE: any = [0.22, 1, 0.36, 1];
 
-function SocialProofBackground({ inView }: { inView: boolean }) {
-  const reduce = useReducedMotion() ?? false;
-
-  const panelMotion = (delay: number, x = 0, y = 0, rotate = 0) => ({
-    initial: reduce ? { opacity: 0 } : { opacity: 0, x, y, rotate },
-    animate: inView ? { opacity: 1, x: 0, y: 0, rotate } : { opacity: 0, x, y, rotate },
-    transition: { duration: reduce ? 0.2 : 0.85, ease: EASE, delay: reduce ? 0 : delay },
-  });
-
-  return (
-    <div className="sp-collage-root" aria-hidden="true">
-      <div className="sp-red-wash" />
-
-      <div className="sp-desktop-collage">
-        <div className="sp-arrow-silhouette" />
-        <motion.div className="sp-panel sp-panel-cream sp-panel-a" {...panelMotion(0.2, 20, -10, -5)} />
-        <motion.div className="sp-panel sp-panel-lavender sp-panel-b" {...panelMotion(0.3, -16, 12, 6)} />
-        <motion.div className="sp-panel sp-panel-orange sp-panel-c" {...panelMotion(0.4, 18, 16, -7)} />
-        <motion.div className="sp-panel sp-panel-dark-red sp-panel-d" {...panelMotion(0.5, -12, -16, 4)} />
-        <motion.div className="sp-portrait sp-portrait-one" {...panelMotion(0.45, 0, 12, 0)} />
-        <motion.div className="sp-portrait sp-portrait-two" {...panelMotion(0.55, 0, -10, 0)} />
-        <motion.div className="sp-portrait sp-portrait-three" {...panelMotion(0.65, 0, 10, 0)} />
-      </div>
-
-      <div className="sp-mobile-collage">
-        <div className="sp-mobile-panel sp-mobile-panel-a" />
-        <div className="sp-mobile-panel sp-mobile-panel-b" />
-        <div className="sp-mobile-panel sp-mobile-panel-c" />
-        <div className="sp-mobile-circle sp-mobile-circle-a" />
-        <div className="sp-mobile-circle sp-mobile-circle-b" />
-      </div>
-    </div>
-  );
-}
-
 export default function SocialProofSection() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
@@ -56,9 +21,31 @@ export default function SocialProofSection() {
       className="social-proof-section"
       aria-labelledby="social-proof-heading"
     >
-      <div className="social-proof-background" aria-hidden="true">
-        <SocialProofBackground inView={inView} />
-      </div>
+      {/* Desktop background */}
+      <div
+        className="social-proof-background-image absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section7bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Mobile background */}
+      <div
+        className="social-proof-background-image-mobile absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section7bg-mobile.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
 
       <div className="social-proof-content">
         <div className="sp-top-row">

@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
-import CapabilityWheelPlaceholder from './CapabilityWheelPlaceholder';
 
 export default function ConnectedCapabilitiesSection() {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
+  useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section
@@ -14,10 +13,31 @@ export default function ConnectedCapabilitiesSection() {
       className="connected-capabilities-section"
       aria-labelledby="connected-capabilities-heading"
     >
-      {/* Replaceable artwork layer */}
-      <div className="connected-artwork" aria-hidden="true">
-        <CapabilityWheelPlaceholder inView={inView} />
-      </div>
+      {/* Desktop background */}
+      <div
+        className="connected-capabilities-background-image absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section5bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Mobile background */}
+      <div
+        className="connected-capabilities-background-image-mobile absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section5bg-mobile.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
 
       {/* Live foreground layer */}
       <div className="connected-capabilities-foreground">

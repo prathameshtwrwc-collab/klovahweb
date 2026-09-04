@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import CollaborationArtworkPlaceholder from './CollaborationArtworkPlaceholder';
 
 const EASE: any = [0.22, 1, 0.36, 1];
 
@@ -23,10 +22,31 @@ export default function CollaborationSection() {
       className="collaboration-section"
       aria-labelledby="collaboration-heading"
     >
-      {/* 1. Temporary replaceable artwork layer (z-index: 1, pointer-events: none) */}
-      <div className="collaboration-background" aria-hidden="true">
-        <CollaborationArtworkPlaceholder inView={inView} />
-      </div>
+      {/* Desktop background */}
+      <div
+        className="collaboration-background-image absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section6bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Mobile background */}
+      <div
+        className="collaboration-background-image-mobile absolute inset-0 pointer-events-none select-none"
+        style={{
+          zIndex: 1,
+          backgroundImage: "url('/images/section6bg-mobile.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
 
       {/* 2. Live foreground content (z-index: 5+) */}
       <div className="collaboration-content">
