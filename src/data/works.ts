@@ -8,6 +8,7 @@ export interface WorkProject {
   metric: string;
   metricLabel: string;
   accent: string;
+  image: string;
   caseSlug?: string;
   tags: string[];
 }
@@ -24,6 +25,7 @@ export const WORKS: WorkProject[] = [
     metric: '2.4×',
     metricLabel: 'Sales',
     accent: '#f32616',
+    image: '/images/hanging-card1.png',
     caseSlug: 'commerce-growth',
     tags: ['Brand & Web', 'Commerce', 'Growth'],
   },
@@ -37,6 +39,7 @@ export const WORKS: WorkProject[] = [
     metric: '61%',
     metricLabel: 'Faster',
     accent: '#159ce4',
+    image: '/images/hanging-card2.png',
     caseSlug: 'operations-intelligence',
     tags: ['AI & Data', 'Apps'],
   },
@@ -50,6 +53,7 @@ export const WORKS: WorkProject[] = [
     metric: '12',
     metricLabel: 'Weeks',
     accent: '#315fd0',
+    image: '/images/hanging-card3.png',
     caseSlug: 'launch-system',
     tags: ['Apps', 'Brand & Web'],
   },
@@ -63,6 +67,7 @@ export const WORKS: WorkProject[] = [
     metric: '3.8×',
     metricLabel: 'Engagement',
     accent: '#c9afe0',
+    image: '/images/section4bg.png',
     tags: ['Brand & Web', 'Commerce'],
   },
   {
@@ -75,6 +80,7 @@ export const WORKS: WorkProject[] = [
     metric: '94%',
     metricLabel: 'Retention',
     accent: '#ffd447',
+    image: '/images/section5bg.png',
     tags: ['Apps', 'AI & Data'],
   },
   {
@@ -87,6 +93,7 @@ export const WORKS: WorkProject[] = [
     metric: '47%',
     metricLabel: 'Efficiency',
     accent: '#159ce4',
+    image: '/images/section6bg.png',
     tags: ['AI & Data', 'Growth'],
   },
 ];

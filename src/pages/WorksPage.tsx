@@ -51,8 +51,16 @@ export default function WorksPage() {
               animate={gridInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reduce ? 0 : 24 }}
               transition={{ duration: 0.55, ease: E, delay: i * 0.06 }}
             >
-              <div className="works-card-art" style={{ background: project.accent }} aria-hidden="true">
-                <div className="works-card-art-inner" />
+              <div
+                className="works-card-art"
+                style={{
+                  backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%), url(${project.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+                aria-hidden="true"
+              >
+                <span className="works-card-art-tag" style={{ background: project.accent }} />
               </div>
               <div className="works-card-content">
                 <span className="works-card-num">{project.number}</span>

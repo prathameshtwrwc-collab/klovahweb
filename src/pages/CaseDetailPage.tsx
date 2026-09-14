@@ -12,7 +12,11 @@ export default function CaseDetailPage() {
     <PageShell title={cs.title} description={cs.summary}>
       {/* HERO */}
       <section className="cd-hero" style={{ background: cs.accent }}>
-        <div className="cd-hero-bg" aria-hidden="true" />
+        <div
+          className="cd-hero-bg"
+          style={{ ['--cd-hero-image' as string]: `url(${cs.image})` }}
+          aria-hidden="true"
+        />
         <div className="cd-hero-content">
           <span className="cd-meta">CASE {cs.number} / {cs.category.toUpperCase()}</span>
           <h1 className="cd-title">{cs.title}</h1>
@@ -47,11 +51,12 @@ export default function CaseDetailPage() {
         </div>
       </section>
 
-      {/* GALLERY PLACEHOLDER */}
+      {/* GALLERY */}
       <section className="cd-gallery" aria-hidden="true">
-        <div className="cd-gallery-placeholder" style={{ background: cs.accent, opacity: 0.15 }}>
-          <span>GALLERY — IMAGES WILL BE ADDED IN VS CODE</span>
-        </div>
+        <div
+          className="cd-gallery-placeholder"
+          style={{ backgroundImage: `url(${cs.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
       </section>
 
       {/* CAPABILITIES USED */}

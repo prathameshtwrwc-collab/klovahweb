@@ -11,6 +11,7 @@ export interface CaseStudy {
   metricLabel: string;
   capabilities: string[];
   accent: string;
+  image: string;
 }
 
 // These metrics must be replaced with verified project data before production
@@ -28,6 +29,7 @@ export const CASES: CaseStudy[] = [
     metricLabel: 'SALES',
     capabilities: ['Brand Systems', 'Ecommerce Design', 'Next.js Development', 'Analytics', 'Conversion Optimization'],
     accent: '#f32616',
+    image: '/images/hanging-card1.png',
   },
   {
     slug: 'operations-intelligence',
@@ -42,6 +44,7 @@ export const CASES: CaseStudy[] = [
     metricLabel: 'FASTER',
     capabilities: ['Data Engineering', 'AI Workflows', 'Dashboard Design', 'Backend Systems', 'Mobile App'],
     accent: '#159ce4',
+    image: '/images/hanging-card2.png',
   },
   {
     slug: 'launch-system',
@@ -56,6 +59,7 @@ export const CASES: CaseStudy[] = [
     metricLabel: '12 WEEKS',
     capabilities: ['Product Strategy', 'UI/UX Design', 'Full-Stack Engineering', 'API Integration', 'Performance'],
     accent: '#315fd0',
+    image: '/images/hanging-card3.png',
   },
 ];
 

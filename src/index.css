@@ -5679,7 +5679,15 @@ html { scroll-behavior: auto; }
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+.works-hero-bg { background-image: linear-gradient(180deg, rgba(201,175,224,0.55) 0%, rgba(201,175,224,0.88) 100%), url('/images/section3bg.png'); }
+.cases-hero-bg { background-image: linear-gradient(180deg, rgba(255,212,71,0.5) 0%, rgba(255,212,71,0.85) 100%), url('/images/section7bg.png'); }
+.cap-hero-bg { background-image: linear-gradient(180deg, rgba(255,212,71,0.5) 0%, rgba(255,212,71,0.85) 100%), url('/images/section5bg.png'); }
+.proc-hero-bg { background-image: linear-gradient(180deg, rgba(21,156,228,0.45) 0%, rgba(21,156,228,0.85) 100%), url('/images/section6bg.png'); }
+.about-hero-bg { background-image: linear-gradient(180deg, rgba(243,38,22,0.55) 0%, rgba(243,38,22,0.88) 100%), url('/images/hero-section-01-desktop.png'); }
 .works-hero-content, .cases-hero-content, .cap-hero-content, .proc-hero-content, .about-hero-content, .contact-hero-content {
   position: relative;
   z-index: 2;
@@ -5802,11 +5810,14 @@ html { scroll-behavior: auto; }
   position: relative;
 }
 .works-card-tall .works-card-art { height: 100%; min-height: 400px; }
-.works-card-art-inner {
+.works-card-art-tag {
   position: absolute;
-  inset: 12%;
-  background: rgba(247, 240, 229, 0.35);
-  border-radius: 4px;
+  left: 20px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(11, 10, 9, 0.25);
 }
 .works-card-content {
   padding: 20px 22px 24px;
@@ -5891,7 +5902,7 @@ html { scroll-behavior: auto; }
 .case-row { border-bottom: 1px solid rgba(11, 10, 9, 0.18); }
 .case-row-link {
   display: grid;
-  grid-template-columns: 56px 1fr auto 48px;
+  grid-template-columns: 120px 1fr auto 48px;
   align-items: center;
   gap: 24px;
   padding: clamp(28px, 3.5vh, 42px) 0;
@@ -5900,7 +5911,7 @@ html { scroll-behavior: auto; }
   transition: opacity 250ms;
 }
 .case-row:hover .case-row-link { opacity: 0.85; }
-.case-row-art { width: 56px; height: 56px; border-radius: 4px; flex-shrink: 0; }
+.case-row-art { width: 120px; height: 90px; border-radius: 6px; flex-shrink: 0; box-shadow: 0 8px 20px rgba(11, 10, 9, 0.14); }
 .case-row-num { font-family: var(--font-inter); font-size: 13px; font-weight: 500; opacity: 0.5; }
 .case-row-title { font-family: var(--font-inter); font-size: clamp(24px, 2vw, 32px); font-weight: 700; margin: 0; }
 .case-row-cat { font-family: var(--font-inter); font-size: 12px; font-weight: 500; opacity: 0.6; margin-top: 4px; display: block; }
@@ -5912,7 +5923,15 @@ html { scroll-behavior: auto; }
 
 /* Case Detail */
 .cd-hero { position: relative; width: 100%; min-height: 65svh; display: flex; align-items: flex-end; padding: clamp(100px, 14vh, 160px) clamp(32px, 3.4vw, 58px) clamp(48px, 6vh, 72px); box-sizing: border-box; color: #fff1d7; overflow: hidden; }
-.cd-hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.cd-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: linear-gradient(0deg, rgba(11, 10, 9, 0.65) 0%, rgba(11, 10, 9, 0.05) 55%), var(--cd-hero-image);
+  background-size: cover;
+  background-position: center;
+}
 .cd-hero-content { position: relative; z-index: 2; max-width: 700px; }
 .cd-meta { font-family: var(--font-inter); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 18px; }
 .cd-title { font-family: var(--font-anton); font-size: clamp(48px, 5.5vw, 82px); font-weight: 400; line-height: 0.88; letter-spacing: -0.03em; text-transform: uppercase; margin: 0 0 18px; }
@@ -5927,7 +5946,7 @@ html { scroll-behavior: auto; }
 .cd-metric-val { font-family: var(--font-anton); font-size: clamp(72px, 8vw, 120px); font-weight: 400; line-height: 0.85; }
 .cd-metric-label { font-family: var(--font-inter); font-size: clamp(24px, 2.5vw, 36px); font-weight: 600; text-transform: uppercase; }
 .cd-gallery { padding: clamp(32px, 4vh, 56px) clamp(32px, 3.4vw, 58px); background: #f7f0e5; }
-.cd-gallery-placeholder { display: flex; align-items: center; justify-content: center; min-height: 280px; border-radius: 4px; font-family: var(--font-inter); font-size: 13px; font-weight: 500; text-transform: uppercase; color: rgba(11, 10, 9, 0.35); }
+.cd-gallery-placeholder { min-height: 280px; height: 48vw; max-height: 560px; border-radius: 4px; }
 .cd-caps-list { display: flex; flex-wrap: wrap; gap: 10px; }
 .cd-cap-tag { font-family: var(--font-inter); font-size: 13px; font-weight: 500; padding: 8px 16px; border: 1px solid rgba(11, 10, 9, 0.2); border-radius: 2px; }
 .cd-next { padding: clamp(56px, 7vh, 84px) clamp(32px, 3.4vw, 58px); color: #fff1d7; text-align: center; }
@@ -6024,7 +6043,16 @@ html { scroll-behavior: auto; }
 .about-body-text { font-family: var(--font-inter); font-size: clamp(17px, 1.3vw, 21px); line-height: 1.5; margin: 0; }
 .about-roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 18px; }
 .about-role-card { text-align: center; }
-.role-portrait { width: 72px; height: 72px; border-radius: 50%; background: rgba(11, 10, 9, 0.12); margin: 0 auto 10px; }
+.role-portrait {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background-image: url('/images/section7bg.png');
+  background-size: 730px 345px;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 3px #f7f0e5, 0 4px 14px rgba(11, 10, 9, 0.18);
+}
 .role-label { font-family: var(--font-inter); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
 .about-principles { padding: clamp(48px, 6vh, 72px) clamp(32px, 3.4vw, 58px); background: #f7f0e5; border-top: 1px solid rgba(11, 10, 9, 0.14); }
 .about-principles-list { display: flex; flex-direction: column; gap: 18px; }

@@ -9,7 +9,13 @@ const PRINCIPLES = [
   'SHOW THE WORK EARLY.',
   'BUILD FOR WHAT COMES NEXT.',
 ];
-const ROLES = ['STRATEGY', 'DESIGN', 'ENGINEERING', 'DATA', 'GROWTH'];
+const ROLES = [
+  { label: 'STRATEGY', pos: '-319px -28px' },
+  { label: 'DESIGN', pos: '-390px -162px' },
+  { label: 'ENGINEERING', pos: '-544px -26px' },
+  { label: 'DATA', pos: '-438px -252px' },
+  { label: 'GROWTH', pos: '-555px -252px' },
+];
 const PROOF = [
   { val: '20+', label: 'LAUNCHES' },
   { val: 'MULTI-', label: 'SECTOR' },
@@ -44,9 +50,9 @@ export default function AboutPage() {
         <div className="about-team-art" aria-hidden="true">
           <div className="about-roles-grid">
             {ROLES.map(r => (
-              <div key={r} className="about-role-card">
-                <div className="role-portrait" />
-                <span className="role-label">{r}</span>
+              <div key={r.label} className="about-role-card">
+                <div className="role-portrait" style={{ backgroundPosition: r.pos }} />
+                <span className="role-label">{r.label}</span>
               </div>
             ))}
           </div>

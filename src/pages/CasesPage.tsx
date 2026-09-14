@@ -32,7 +32,11 @@ export default function CasesPage() {
             transition={{ duration: 0.55, ease: E, delay: i * 0.06 }}
           >
             <Link to={`/cases/${c.slug}`} className="case-row-link">
-              <div className="case-row-art" style={{ background: c.accent }} aria-hidden="true" />
+              <div
+                className="case-row-art"
+                style={{ backgroundImage: `url(${c.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                aria-hidden="true"
+              />
               <div className="case-row-content">
                 <span className="case-row-num">{c.number}</span>
                 <div className="case-row-info">
